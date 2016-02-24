@@ -4,10 +4,16 @@ using namespace std;
 
 class Node
 {
-public:
+private:
 	double data;
 	Node *next;
+
+public:
 	Node();
-	Node(double val, Node *a_node = NULL);
-	void append_node(Node *new_node);
+	Node(Node *a_node);
+	void set_next(Node *new_node);
+	Node* get_next();
+	void set_value(double d);
+	double get_value();
+	bool has_next();
 };

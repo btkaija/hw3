@@ -1,19 +1,43 @@
-#include <node.h>
+#include "node.h"
 
-//null constructor
 Node::Node()
 {
+	next = NULL
 }
 
-Node::Node(double val, Node *a_node)
+Node::Node(Node *a_node)
 {
-	this->data = val;
-	this->next = a_node;
+	data = a_node->data;
+	next = a_node->next;
 }
 
-
-void Node::append_node(Node *new_node)
+void Node::set_next(Node *new_node)
 {
-	new_node->next = this->next;
-	this->next = new_node;
+	if(new_node == NULL)
+		next = NULL;
+	else
+		next = new_node;
+}
+
+double Node::get_value()
+{
+	return data;
+}
+
+void Node::set_value(double d)
+{
+	data = d;
+}
+
+Node*  Node::get_next()
+{
+	return next;
+}
+
+bool Node::has_next()
+{
+	if(next == NULL)
+		return false;
+	else
+		return true;
 }
