@@ -14,11 +14,11 @@ int main(int argv, char **argc)
 
 	if(argv > 2)
 	{
-		cout << "invalid arguments" << endl;
+		cerr << "Invalid number of arguments" << endl;
 	}
 	else
 	{
-		cout << "reading input..." << endl << endl;
+		//cout << "reading input..." << endl << endl;
 		string input_val;
 		
 		if(argv > 1)
@@ -43,7 +43,7 @@ int main(int argv, char **argc)
 		tail = head;
 		do
 		{
-			cout << endl;
+			//cout << endl;
 			
 			*input_stream >> input_val;
 			
@@ -57,7 +57,7 @@ int main(int argv, char **argc)
 			if(is_add && is_mult && is_avg)
 			{
 				input_num = stod(input_val);
-				cout << "value recorded: " << to_string(input_num) << endl;
+				//cout << "value recorded: " << to_string(input_num) << endl;
 				
 				Node* new_node = new Node();
 				new_node->set_value(input_num);
@@ -70,8 +70,8 @@ int main(int argv, char **argc)
 		
 		if(input_file) input_file.close();
 
-		cout << "done inputing values" << endl;
-		cout << "combining values via " << input_val << " operation" << endl;
+		//cout << "done inputing values" << endl;
+		//cout << "combining values via " << input_val << " operation" << endl;
 			
 		double result = 0.0;
 		if(!is_mult) result = 1;
@@ -98,6 +98,6 @@ int main(int argv, char **argc)
 	}
 
 
-	cout << "completed operations." << endl;
+	//cout << "completed operations." << endl;
 	return 0;
 }
