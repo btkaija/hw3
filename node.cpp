@@ -2,7 +2,7 @@
 
 Node::Node()
 {
-	next = NULL
+	next = NULL;
 }
 
 Node::Node(Node *a_node)
